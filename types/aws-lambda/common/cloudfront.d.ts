@@ -60,9 +60,8 @@ export interface CloudFrontEvent {
     config: {
         readonly distributionDomainName: string;
         readonly distributionId: string;
-    } & (
-        | { readonly eventType: 'origin-request' | 'origin-response' }
-        | { readonly eventType: 'viewer-request' | 'viewer-response'; readonly requestId: string });
+        readonly requestId: string;
+    };
 }
 
 /**
